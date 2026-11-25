@@ -1,11 +1,12 @@
 const { app, BrowserWindow } = require('electron')
 
 const createWindow = () => {
-    let window = new BrowserWindow({
-        show: false,
-    });
-    window.maximize();
-    window.show();
+const window = new BrowserWindow({
+    name: 'main-window',
+    width: 800,
+    height: 600,
+    windowStatePersistence: true
+  })
 
   window.loadFile('index.html')
 }
