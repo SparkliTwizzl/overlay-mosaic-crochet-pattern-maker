@@ -1,12 +1,13 @@
 const { app, BrowserWindow } = require('electron')
 
 const createWindow = () => {
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600
-  })
+    let window = new BrowserWindow({
+        show: false,
+    });
+    window.maximize();
+    window.show();
 
-  win.loadFile('index.html')
+  window.loadFile('index.html')
 }
 
 app.on('window-all-closed', () => {
@@ -15,6 +16,7 @@ app.on('window-all-closed', () => {
 
 app.whenReady().then(() => {
   createWindow()
+
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
