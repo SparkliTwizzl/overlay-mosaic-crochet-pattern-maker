@@ -5,7 +5,12 @@ async function main() {
   const isDevelopment = require('electron-is-dev');
 
   async function createMainWindow() {
-    const window = new BrowserWindow({ width: 800, height: 600 });
+    const window = new BrowserWindow({
+        name: 'main-window',
+        width: 800,
+        height: 600,
+        windowStatePersistence: true
+      });
     await new Promise((resolve, reject) => {
       window.webContents.once('did-finish-load', resolve);
       window.once('closed', () => reject(new Error('Window closed prematurely.')));
@@ -22,16 +27,14 @@ async function main() {
   await Promise.race([
     Promise.all([rendererPromise, mainWindowPromise]),
     terminationPromise.finally(() => {
-        throw new Error('All windows closed prematurely.');
+      throw new Error('All windows closed prematurely.');
     })
   ]);
 
   const mainWindow = await mainWindowPromise;
   mainWindow.webContents.send("mainReady");
 
-  if (isDevelopment) {
-    mainWindow.webContents.openDevTools()
-  }
+  // mainWindow.webContents.openDevTools();
 
   await terminationPromise;
   app.exit(0);
