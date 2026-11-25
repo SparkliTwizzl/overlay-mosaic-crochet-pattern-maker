@@ -1,24 +1,25 @@
 {
-    "name": "overlay-mosaic-crochet-pattern-maker",
-    "version": "1.0.0",
-    "description": "Design, edit, and export overlay mosaic crochet patterns.",
-    "homepage": "https://github.com/SparkliTwizzl/overlay-mosaic-crochet-pattern-maker#readme",
-    "bugs": {
-        "url": "https://github.com/SparkliTwizzl/overlay-mosaic-crochet-pattern-maker/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/SparkliTwizzl/overlay-mosaic-crochet-pattern-maker.git"
-    },
-    "license": "AEL-AT-NC-DA-OS 3.0",
-    "author": "SparkliTwizzl",
-    "type": "commonjs",
-    "main": "main.js",
-    "scripts": {
-        "start": "electron .",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "devDependencies": {
-        "electron": "^45.5.0"
-    }
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^3.0.4"
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.0.1"
+  }
 }
